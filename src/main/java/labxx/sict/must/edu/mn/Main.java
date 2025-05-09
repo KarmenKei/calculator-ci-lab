@@ -8,29 +8,29 @@ public class Main {
         Calculator calculator = new Calculator();
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Tooni mashin aslaa..");
+        System.out.println("Calculator started.");
         while (true) {
-            System.out.println("Uildel songono uu: nemeh, hasah, urjuuleh, huvaah, esvel garah bol 'exit' gej bich.");
+            System.out.println("Choose an operation: add, subtract, multiply, divide, modulus. Type 'exit' to quit.");
             String operation = scanner.nextLine();
 
             if (operation.equalsIgnoreCase("exit")) {
-                System.out.println("Garlaa..");
+                System.out.println("Exiting...");
                 break;
             }
 
-            System.out.println("Ehnii noimor oruulna uu:");
+            System.out.println("Enter first number:");
             float a = scanner.nextFloat();
 
-            System.out.println("Daraagiin noimor oruulna uu:");
+            System.out.println("Enter second number:");
             float b = scanner.nextFloat();
 
             scanner.nextLine(); 
 
             try {
                 float result = calculator.performOperation(operation, a, b);
-                System.out.println("Hariu: " + result);
+                System.out.println("Result: " + result);
             } catch (IllegalArgumentException | ArithmeticException e) {
-                System.out.println("Aldaa: " + e.getMessage());
+                System.out.println("Error: " + e.getMessage());
             }
         }
 
